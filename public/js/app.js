@@ -46,7 +46,7 @@ weatherForm.addEventListener("submit", e => {
   message1.textContent = "Loading...";
   message2.textContent = "";
 
-  fetch(`http://localhost:3000/weather?address=${location}`).then(response => {
+  fetch(`/weather?address=${location}`).then(response => {
     response.json().then(data => {
       const tempHighTime = new Date(data.highTemperatureTime * 1000)
       const H = twoDigits(tempHighTime.getHours())
